@@ -25,7 +25,8 @@ export default class ProdutosController {
             'nome',
             'validade',
             'preco',
-            'fonecedor_id'
+            'fonecedor_id',
+            'marca_id'
         ])
         return produto.merge(dados).save()
     }

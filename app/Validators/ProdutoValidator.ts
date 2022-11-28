@@ -32,7 +32,8 @@ export default class ProdutoValidator {
     preco: schema.string(),
     fornecedor_id: schema.number([
       rules.exists({ table:'fornecedors', column: 'id' })
-    ])
+    ]),
+    marca_id: schema.number()
   })
 
   /**
