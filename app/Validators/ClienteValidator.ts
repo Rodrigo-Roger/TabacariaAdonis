@@ -25,7 +25,8 @@ export default class ClienteValidator {
    */
   public schema = schema.create({
     nome: schema.string([
-      rules.maxLength(50)
+      rules.maxLength(50),
+      rules.regex(/^[a-zA-Z0-9]+$/)
     ]),
     CPF: schema.string({}, [
       rules.unique({ table: 'clientes', column: 'CPF' })
@@ -50,6 +51,9 @@ export default class ClienteValidator {
    *
    */
   public messages: CustomMessages = {
-  unique:"Insira outro!:Valor ja exite..."
+  unique:"Valor exitente:Insira Outro",
+  string:'insira um valor do Tipo:String ',
+  number:'insira um valor do Tipo:Number(numerico) ',
+  regex:'Esse capo deve ter apenas letras!'
   }
 }

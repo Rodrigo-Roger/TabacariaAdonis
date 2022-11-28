@@ -25,7 +25,8 @@ export default class ProdutoValidator {
    */
   public schema = schema.create({
     nome:schema.string([
-      rules.maxLength(50)
+      rules.maxLength(50),
+      rules.regex(/^[a-zA-Z0-9]+$/)
     ]),
     sabor:schema.string(),
     validade: schema.date(),
@@ -49,4 +50,7 @@ export default class ProdutoValidator {
    */
    public messages: CustomMessages = {
     exists:'Insira um valor existente!',
+    string:'insira um valor do Tipo:String ',
+    number:'insira um valor do Tipo:Number(numerico) ',
+    regex:'Esse capo deve ter apenas letras!'
   }}

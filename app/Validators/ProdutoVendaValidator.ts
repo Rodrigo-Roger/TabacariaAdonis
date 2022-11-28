@@ -45,6 +45,7 @@ export default class ProdutoVendaValidator {
    */
    public messages: CustomMessages = {
     exists:'Insira um valor existente!',
+    number:'insira um valor do Tipo:Number(numerico) '
    
   }
 }

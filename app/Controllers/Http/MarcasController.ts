@@ -6,7 +6,7 @@ import MarcaValidator from "App/Validators/MarcaValidator";
 export default class MarcasController {
     
     index(){
-        return Marca.query().preload("produto").paginate(1)
+        return Marca.query().paginate(1)
     }
     async store({request}){
     const dados = await request.validate(MarcaValidator)
